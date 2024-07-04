@@ -1,0 +1,48 @@
+{
+  "name": "meccano",
+  "version": "2.0.0",
+  "author": "17axaH",
+  "license": "MIT",
+  "description": "frontend project builder",
+  "type": "module",
+  "scripts": {
+    "add": "plop --plopfile ./plop/plopfile.js component",
+    "dev": "cross-env NODE_ENV=development gulp",
+    "prod": "cross-env NODE_ENV=production gulp prod",
+    "serve": "gulp serve"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "del": "^7.1.0",
+    "figlet": "^1.7.0",
+    "gulp": "^5.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-css-url-adjuster": "^0.2.3",
+    "gulp-filter": "^9.0.1",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-if": "^3.0.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-posthtml": "^3.0.5",
+    "gulp-rigger": "^0.5.8",
+    "gulp-stylus": "^3.0.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-zip": "^6.0.0",
+    "live-server": "^1.2.2",
+    "lodash": "^4.17.21",
+    "plop": "^4.0.1",
+    "posthtml-beautify": "^0.7.0",
+    "posthtml-component": "^1.1.1",
+    "posthtml-replace": "^0.1.3",
+    "rupture": "^0.7.1"
+  },
+  "dependencies": {
+    "inputmask": "^5.0.7",
+    "jquery": "^3.6.0",
+    "jquery-query-object": "^2.2.3",
+    "jquery-validation": "^1.19.3",
+    "jquery.cookie": "^1.4.1",
+    "remodal": "^1.1.1",
+    "swiper": "^10.3.1"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "target": "ES6",
+    "module": "commonjs",
+    "checkJs": true
+  },
+  "include": ["src/**/*.styl"],
+  "exclude": [
+    "node_modules"
+  ]
+}
