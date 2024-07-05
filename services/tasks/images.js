@@ -1,5 +1,5 @@
 import { src, dest, watch } from 'gulp'
-import config from './config.js'
+import config from '../config.js'
 import newer from 'gulp-newer'
 
 export const images = () => {

@@ -1,4 +1,4 @@
-import config from './config.js'
+import config from '../config.js'
 import liveServer from "live-server"
 
 export const server = (done) => {

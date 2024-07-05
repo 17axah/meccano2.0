@@ -1,5 +1,5 @@
 import { src, dest, watch } from 'gulp'
-import config from './config.js'
+import config from '../config.js'
 
 export const assets = () => {
   return src(config.assets.src)

@@ -15,17 +15,17 @@ export default function (plop) {
       {
         type: 'add',
         path: '../src/components/{{kebabCase component}}/{{kebabCase component}}.html',
-        templateFile: 'plop-templates/component-html.hbs',
+        templateFile: 'templates/component-html.hbs',
       },
       {
         type: 'add',
         path: '../src/components/{{kebabCase component}}/{{kebabCase component}}.styl',
-        templateFile: 'plop-templates/component-styl.hbs',
+        templateFile: 'templates/component-styl.hbs',
       },
       {
         type: 'add',
         path: '../src/components/{{kebabCase component}}/{{kebabCase component}}.js',
-        templateFile: 'plop-templates/component-js.hbs',
+        templateFile: 'templates/component-js.hbs',
       },
     ],
   })

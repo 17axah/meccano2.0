@@ -1,4 +1,4 @@
-import config from './config.js'
+import config from '../config.js'
 import { deleteSync } from 'del'
 
 export const clean = (done) => {

@@ -1,5 +1,5 @@
 import { src, dest, watch } from 'gulp'
-import config from './config.js'
+import config from '../config.js'
 import posthtml from 'gulp-posthtml'
 import posthtmlComponent from 'posthtml-component'
 import posthtmlBeautify from 'posthtml-beautify'

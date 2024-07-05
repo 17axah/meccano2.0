@@ -1,6 +1,6 @@
 import { src, dest } from 'gulp'
 import gulpZip from 'gulp-zip';
-import config from './config.js'
+import config from '../config.js'
 
 export const zip = () => {
   const currentDate = new Date()

@@ -1,5 +1,5 @@
 import { src, dest, parallel, watch } from 'gulp'
-import config from './config.js'
+import config from '../config.js'
 import rigger from 'gulp-rigger'
 import cleanCSS from 'gulp-clean-css'
 import uglify from 'gulp-uglify'

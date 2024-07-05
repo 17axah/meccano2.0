@@ -6,7 +6,8 @@
   "description": "frontend project builder",
   "type": "module",
   "scripts": {
-    "add": "plop --plopfile ./plop/plopfile.js component",
+    "add": "plop --plopfile ./services/plopfile.js component",
+    "fonts": "node services/fonts",
     "dev": "cross-env NODE_ENV=development gulp",
     "prod": "cross-env NODE_ENV=production gulp prod",
     "serve": "gulp serve"
@@ -15,6 +16,8 @@
     "cross-env": "^7.0.3",
     "del": "^7.1.0",
     "figlet": "^1.7.0",
+    "fontmin": "^1.1.0",
+    "glob": "^10.4.2",
     "gulp": "^5.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
@@ -28,6 +31,7 @@
     "gulp-stylus": "^3.0.1",
     "gulp-uglify": "^3.0.2",
     "gulp-zip": "^6.0.0",
+    "handlebars": "^4.7.8",
     "live-server": "^1.2.2",
     "lodash": "^4.17.21",
     "plop": "^4.0.1",

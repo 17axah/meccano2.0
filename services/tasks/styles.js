@@ -1,5 +1,5 @@
 import { src, dest, watch } from 'gulp'
-import config from './config.js'
+import config from '../config.js'
 import stylus from 'gulp-stylus'
 import urlAdjuster from 'gulp-css-url-adjuster'
 import gulpif from 'gulp-if'

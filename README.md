@@ -32,3 +32,8 @@ $ npm run serve
 ```bash
 $ npm run add
 ```
+
+## Конвертация шрифтов(beta)
+```bash
+$ npm run fonts
+```
