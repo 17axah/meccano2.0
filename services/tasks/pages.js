@@ -41,6 +41,17 @@ const plugins = [
       },
       attrs: {
         href: {
+          from: `${config.src}/${config.vendor.dir}/`,
+          to: `${config.vendor.dir}/`
+        }
+      }
+    },
+    {
+      match: {
+        tag: 'link'
+      },
+      attrs: {
+        href: {
           from: `.styl`,
           to: `.css`
         }
@@ -54,6 +65,17 @@ const plugins = [
         src: {
           from: `${config.src}/${config.scripts.dir}/`,
           to: `${config.scripts.dir}/`
+        }
+      }
+    },
+    {
+      match: {
+        tag: 'script'
+      },
+      attrs: {
+        src: {
+          from: `${config.src}/${config.vendor.dir}/`,
+          to: `${config.vendor.dir}/`
         }
       }
     },
