@@ -1,5 +1,5 @@
 import { src, dest } from 'gulp'
-import gulpZip from 'gulp-zip';
+import gulpZip from 'gulp-zip'
 import config from '../config.js'
 
 export const zip = () => {

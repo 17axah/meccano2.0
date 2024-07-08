@@ -7,8 +7,21 @@
 +7. watch для всех тасков
 +10. Посмотреть как можно ускорить. watch медленно отрабатывает. Может какой то cache прикруть...
 +11. Пробнуть написать команды для конвертации шрифтов
++10. title в html
 
 9. Пробнуть прикруть линтер для styl и притиер
 
 8. Привести в порядок кодовую базу
-10. title в html
+-10. Сделать пути через @
+11. ридми описать posthtml-component. Про логику путей. какие расширения vscode стоит установить
+
+Расширения для vscode:
+path autocomplete
+"path-autocomplete.pathMappings": {
+    "src": "${workspace}/",
+  }
+
+posthtml-snippets
+
+
+Stylus Supremacy

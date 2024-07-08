@@ -63,7 +63,7 @@ export default {
   },
   fonts: {
     dir: FONTS_DIR,
-    src: `${SOURCE}/${FONTS_DIR}/*.*`,
+    src: `${SOURCE}/${FONTS_DIR}/*.{woff,woff2}`,
     dest: `${DEST}/${FONTS_DIR}`,
     watch: [
       `${SOURCE}/${FONTS_DIR}/*.*`

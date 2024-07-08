@@ -20,7 +20,7 @@ export const styles = () => {
   return src(config.styles.src)
     .pipe(stylus(stylusConfig))
     .pipe(urlAdjuster({
-      replace: [`${config.src}`, '..']
+      replace: [`/${config.src}`, '..']
     }))
     .pipe(gulpif(production, gcmq()))
     .pipe(dest(config.styles.dest))
