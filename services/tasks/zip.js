@@ -15,5 +15,5 @@ export const zip = () => {
 
   return src(`${config.dest}/**/*.*`)
     .pipe(gulpZip(filename))
-    .pipe(dest('./'))
+    .pipe(dest('./build'))
 }
