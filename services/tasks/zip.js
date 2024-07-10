@@ -1,8 +1,11 @@
 import { src, dest } from 'gulp'
 import gulpZip from 'gulp-zip'
+import { deleteSync } from 'del'
 import config from '../config.js'
 
 export const zip = () => {
+  deleteSync([config.build])
+
   const currentDate = new Date()
 
   const year = currentDate.getFullYear();
@@ -15,5 +18,5 @@ export const zip = () => {
 
   return src(`${config.dest}/**/*.*`)
     .pipe(gulpZip(filename))
-    .pipe(dest('./build'))
+    .pipe(dest(config.build))
 }

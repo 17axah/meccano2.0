@@ -26,6 +26,32 @@
 
 Так же есть команда `npm run fonts`(экспериментально). Она сканирует `src/fonts` и если там шрифты в формате `.ttf` - конвертирует их в `.woff` и `woff2`. Затем обновляет файл `src/styles/_fonts.styl` - прописывает туда все пути к шрифтам.
 
+Для корректной работы автоисправления необходимо добавить в конфиг vscode:
+```json
+{
+  "[html]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[stylus]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "thisismanta.stylus-supremacy"
+  },
+
+  "stylusSupremacy.insertBraces": false,
+  "stylusSupremacy.insertColons": false,
+  "stylusSupremacy.selectorSeparator": ",\n",
+  "stylusSupremacy.reduceMarginAndPaddingValues": true,
+  "stylusSupremacy.insertSpaceBeforeComment": true,
+  "stylusSupremacy.insertSpaceAfterComment": false,
+  "stylusSupremacy.insertSemicolons": false,
+  "stylusSupremacy.insertNewLineAroundBlocks": true,
+
+  "files.insertFinalNewline": true
+}
+```
+
 ## Установить зависимости
 ```bash
 $ npm install
@@ -59,3 +85,4 @@ $ npm run fonts
 ## Рекомендованные расширения для VS Code:
 * [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 * [PostHTML Snippets](https://marketplace.visualstudio.com/items?itemName=cossssmin.posthtml)
+* [Stylus Supremacy](https://marketplace.visualstudio.com/items?itemName=thisismanta.stylus-supremacy)

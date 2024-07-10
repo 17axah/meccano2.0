@@ -29,8 +29,6 @@ build
 
 # IDE / Editor
 .idea
-.vscode
-.editorconfig
 
 # macOS
 .DS_Store
