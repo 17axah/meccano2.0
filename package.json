@@ -24,6 +24,7 @@
     "gulp-css-url-adjuster": "^0.2.3",
     "gulp-filter": "^9.0.1",
     "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-if": "^3.0.0",
     "gulp-newer": "^1.4.0",
     "gulp-posthtml": "^3.0.5",

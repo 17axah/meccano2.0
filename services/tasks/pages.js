@@ -1,6 +1,8 @@
 import { src, dest, watch } from 'gulp'
 import config from '../config.js'
 import posthtml from 'gulp-posthtml'
+import htmlmin from 'gulp-htmlmin'
+import gulpif from 'gulp-if'
 import posthtmlComponent from 'posthtml-component'
 import posthtmlBeautify from 'posthtml-beautify'
 import posthtmlReplace from 'posthtml-replace'
@@ -25,7 +27,12 @@ const plugins = [
     "tag": "component",
     "attribute": "src"
   }),
-  posthtmlBeautify(),
+  posthtmlBeautify({
+    rules: {
+      indent: 2,
+      blankLines: false
+    }
+  }),
   posthtmlReplace([
     htmlReplace('link', 'href', `/${config.src}/${config.assets.dir}/`, ''),
     htmlReplace('link', 'href', `/${config.src}/${config.styles.dir}/`, `${config.styles.dir}/`),
@@ -39,8 +46,11 @@ const plugins = [
   ]),
 ]
 
+const production = process.env.NODE_ENV === 'production'
+
 export const pages = () => {
   return src(config.pages.src)
+    .pipe(gulpif(production, htmlmin({ removeComments: true })))
     .pipe(posthtml(plugins))
     .pipe(dest(config.pages.dest))
 }
