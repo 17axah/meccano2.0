@@ -25,7 +25,8 @@ const plugins = [
   posthtmlComponent({
     "root": './',
     "tag": "component",
-    "attribute": "src"
+    "attribute": "src",
+    "yield": "slot"
   }),
   posthtmlBeautify({
     rules: {
