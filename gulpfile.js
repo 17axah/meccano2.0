@@ -15,11 +15,13 @@ console.log(figlet.textSync("Meccano 2.0"));
 
 export const build = series(
   clean,
-  pages,
   parallel(
-    styles,
+    pages,
     scripts,
     vendor,
+  ),
+  parallel(
+    styles,
     images,
     fonts,
     assets

@@ -11,8 +11,21 @@ import path from 'path'
 
 const production = process.env.NODE_ENV === 'production'
 
+const stylusConfig = {
+  use: [rupture()],
+  include: [
+    path.join(path.resolve(), '')
+  ],
+}
+
 const purgecssConfig = {
-  content: [`${config.dest}/*.html`]
+  safelist: [], // use RegExp (example: [/remodal/])
+  content: [
+    `${config.dest}/*.html`,
+    `${config.scripts.dest}/*.js`,
+    `${config.vendor.dest}/*.js`,
+    `${config.vendor.dest}/*.css`,
+  ]
 }
 
 const urlAdjusterConfig = {
@@ -29,13 +42,6 @@ const cleanCSSConfig = {
 }
 
 export const styles = () => {
-  const stylusConfig = {
-    use: [rupture()],
-    include: [
-      path.join(path.resolve(), '')
-    ],
-  }
-
   return src(config.styles.src)
     .pipe(stylus(stylusConfig))
     .pipe(urlAdjuster(urlAdjusterConfig))
