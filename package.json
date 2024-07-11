@@ -27,6 +27,7 @@
     "gulp-if": "^3.0.0",
     "gulp-newer": "^1.4.0",
     "gulp-posthtml": "^3.0.5",
+    "gulp-purgecss": "^6.0.0",
     "gulp-rigger": "^0.5.8",
     "gulp-stylus": "^3.0.1",
     "gulp-uglify": "^3.0.2",
