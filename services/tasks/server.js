@@ -22,10 +22,12 @@ export const server = (done) => {
     logLevel: 0
   });
 
-  console.log(chalk.blue('Local: ') + chalk.blue.underline(LOCAL_URL));
-  console.log(chalk.gray('Network: ') + chalk.gray.underline(NETWORK_URL))
+  setTimeout(() => {
+    console.log(chalk.blue('Local: ') + chalk.blue.underline(LOCAL_URL));
+    console.log(chalk.gray('Network: ') + chalk.gray.underline(NETWORK_URL))
 
-  qrcode.generate(NETWORK_URL, { small: true });
+    qrcode.generate(NETWORK_URL, { small: true });
+  })
 
   done()
 }
