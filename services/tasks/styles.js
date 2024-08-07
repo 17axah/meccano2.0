@@ -19,7 +19,7 @@ const stylusConfig = {
 }
 
 const purgecssConfig = {
-  safelist: [], // use RegExp (example: [/remodal/])
+  safelist: config.purgeCssIgnore,
   content: [
     `${config.dest}/*.html`,
     `${config.scripts.dest}/*.js`,

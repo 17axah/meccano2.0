@@ -1,3 +1,6 @@
+const PORT = 3000
+const PURGE_CSS_INGORE = [/remodal/, /swiper/]
+
 const SOURCE = 'src'
 const DEST = 'dest'
 const BUILD = 'build'
@@ -12,6 +15,8 @@ const COMPONENTS_DIR = 'components'
 const VENDOR_DIR = 'vendor'
 
 export default {
+  port: PORT,
+  purgeCssIgnore: PURGE_CSS_INGORE,
   history: HISTORY,
   build: BUILD,
   dest: DEST,
