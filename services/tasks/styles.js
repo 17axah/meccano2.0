@@ -7,6 +7,7 @@ import gcmq from 'gulp-group-css-media-queries'
 import rupture from 'rupture'
 import purgecss from 'gulp-purgecss'
 import cleanCSS from 'gulp-clean-css'
+import plumber from 'gulp-plumber'
 import path from 'path'
 
 const production = process.env.NODE_ENV === 'production'
@@ -43,6 +44,7 @@ const cleanCSSConfig = {
 
 export const styles = () => {
   return src(config.styles.src)
+    .pipe(plumber())
     .pipe(stylus(stylusConfig))
     .pipe(urlAdjuster(urlAdjusterConfig))
     .pipe(gulpif(production, purgecss(purgecssConfig)))
