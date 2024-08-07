@@ -28,7 +28,5 @@ export const server = (done) => {
 
   qrcode.generate(NETWORK_URL, { small: true });
 
-  console.log(chalk.cyan('Ready for changes'))
-
   done()
 }

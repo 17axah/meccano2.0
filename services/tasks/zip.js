@@ -19,4 +19,5 @@ export const zip = () => {
   return src(`${config.dest}/**/*.*`)
     .pipe(gulpZip(filename))
     .pipe(dest(config.build))
+    .pipe(dest(config.history))
 }

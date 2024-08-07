@@ -26,6 +26,7 @@ node_modules/
 # generate
 dest
 build
+history
 
 # IDE / Editor
 .idea

@@ -1,6 +1,7 @@
 const SOURCE = 'src'
 const DEST = 'dest'
 const BUILD = 'build'
+const HISTORY = 'history'
 
 const STYLES_DIR = 'styles'
 const SCRIPTS_DIR = 'scripts'
@@ -11,6 +12,7 @@ const COMPONENTS_DIR = 'components'
 const VENDOR_DIR = 'vendor'
 
 export default {
+  history: HISTORY,
   build: BUILD,
   dest: DEST,
   src: SOURCE,
