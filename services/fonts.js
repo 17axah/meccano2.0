@@ -4,7 +4,7 @@ import { globSync } from 'glob'
 import fs from 'fs'
 import path from 'path'
 import Handlebars from 'handlebars';
-import config from './config'
+import config from './config.js'
 
 const generateCssFile = () => {
   const files = globSync(`${config.src}/${config.fonts.dir}/*.woff`, { posix: true })
