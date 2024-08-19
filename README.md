@@ -48,7 +48,9 @@
   "stylusSupremacy.insertSemicolons": false,
   "stylusSupremacy.insertNewLineAroundBlocks": true,
 
-  "files.insertFinalNewline": true
+  "files.insertFinalNewline": true,
+
+  "html.customData": ["./html.html-data.json"]
 }
 ```
 

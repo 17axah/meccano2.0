@@ -1,4 +1,7 @@
-import { src, dest, watch } from 'gulp'
+import { series, src, dest, watch } from 'gulp'
+import { globSync } from 'glob'
+import path from 'path'
+import fs from 'fs'
 import config from '../config.js'
 import posthtml from 'gulp-posthtml'
 import htmlmin from 'gulp-htmlmin'
@@ -7,6 +10,8 @@ import plumber from 'gulp-plumber'
 import posthtmlComponent from 'posthtml-component'
 import posthtmlBeautify from 'posthtml-beautify'
 import posthtmlReplace from 'posthtml-replace'
+
+const TAG_PREFIX = 'x-'
 
 const htmlReplace = (tag, attr, from, to) => {
   return {
@@ -22,12 +27,16 @@ const htmlReplace = (tag, attr, from, to) => {
   }
 }
 
+let folders = []
+
 const plugins = [
   posthtmlComponent({
-    "root": './',
-    "tag": "component",
-    "attribute": "src",
-    "yield": "slot"
+    root: './',
+    tag: "component",
+    attribute: "src",
+    yield: "slot",
+    tagPrefix: TAG_PREFIX,
+    folders,
   }),
   posthtmlBeautify({
     rules: {
@@ -50,13 +59,36 @@ const plugins = [
 
 const production = process.env.NODE_ENV === 'production'
 
-export const pages = () => {
+const preBuild = (done) => {
+  const files = globSync(`${config.src}/${config.components.dir}/**/*.html`, { posix: true })
+
+  folders.splice(0, folders.length, ...files.map(path.dirname))
+
+  const htmlCustomData = {
+    tags: files.map((file) => {
+      const name = path.basename(file, path.extname(file))
+
+      return {
+        name: `${TAG_PREFIX}${name}`,
+        description: `The [${name}](file:///${path.resolve(file)}) component.`
+      }
+    })
+  }
+
+  fs.writeFileSync('html.html-data.json', JSON.stringify(htmlCustomData, null, 2) + '\n')
+
+  done()
+}
+
+const build = () => {
   return src(config.pages.src)
     .pipe(plumber())
     .pipe(gulpif(production, htmlmin({ removeComments: true })))
     .pipe(posthtml(plugins))
     .pipe(dest(config.pages.dest))
 }
+
+export const pages = series(preBuild, build)
 
 export const pagesWatch = (done) => {
   watch(config.pages.watch, pages)

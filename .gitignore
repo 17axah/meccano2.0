@@ -27,6 +27,7 @@ node_modules/
 dest
 build
 history
+html.html-data.json
 
 # IDE / Editor
 .idea
