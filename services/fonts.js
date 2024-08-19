@@ -4,9 +4,10 @@ import { globSync } from 'glob'
 import fs from 'fs'
 import path from 'path'
 import Handlebars from 'handlebars';
+import config from './config'
 
 const generateCssFile = () => {
-  const files = globSync('src/fonts/*.woff', { posix: true })
+  const files = globSync(`${config.src}/${config.fonts.dir}/*.woff`, { posix: true })
 
   const fonts = files.map((filePath) => {
     const ext = path.extname(filePath).toLowerCase();
@@ -22,7 +23,7 @@ const generateCssFile = () => {
     const template = Handlebars.compile(templateSource);
     const content = template({ fonts });
 
-    fs.writeFile('src/styles/_fonts.styl', content, (err) => {
+    fs.writeFile(`${config.src}/${config.styles.dir}/_fonts.styl`, content, (err) => {
       if (err) {
         console.error('Error writing Stylus file:', err);
       } else {
@@ -33,8 +34,8 @@ const generateCssFile = () => {
 }
 
 new Fontmin()
-  .src('src/fonts/*.ttf')
+  .src(`${config.src}/${config.fonts.dir}/*.ttf`)
   .use(Fontmin.ttf2woff())
   .use(Fontmin.ttf2woff2())
-  .dest('src/fonts')
+  .dest(`${config.src}/${config.fonts.dir}`)
   .run(generateCssFile);
