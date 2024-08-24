@@ -2,7 +2,7 @@ import { src, dest, watch } from 'gulp'
 import config from '../config.js'
 
 export const assets = () => {
-  return src(config.assets.src)
+  return src(config.assets.src, { encoding: false })
     .pipe(dest(config.assets.dest))
 }
 
