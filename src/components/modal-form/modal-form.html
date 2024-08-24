@@ -1,0 +1,38 @@
+<script props>
+  module.exports = {
+    name: props.name,
+  };
+</script>
+
+<x-modal class="modal-form" name="{{name}}">
+  <div class="modal-form__inner">
+    <div class="modal-form__close tap-color" data-remodal-action="close" title="Закрыть">
+      <div class="modal-form__close-icon"></div>
+    </div>
+
+    <div class="modal-form__inner">
+      <x-feedback-form>
+        <slot></slot>
+        <div class="modal-form__info-title">
+          <slot:title></slot:title>
+        </div>
+        <div class="modal-form__feedback-container">
+          <div class="modal-form__feedback-input modal-form__feedback-item">
+            <slot:name></slot:name>
+          </div>
+          <div class="modal-form__feedback-input modal-form__feedback-item">
+            <slot:phone></slot:phone>
+          </div>
+          <div class="modal-form__button modal-form__feedback-item">
+            <slot:button></slot:button>
+          </div>
+          <div class="modal-form__agree">
+            <div class="modal-form__agree-text">
+              <slot:agree></slot:agree>
+            </div>
+          </div>
+        </div>
+      </x-feedback-form>
+    </div>
+  </div>
+</x-modal>

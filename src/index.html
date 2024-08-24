@@ -15,4 +15,23 @@
   <meta name="description" content="Описание главной страницы" />
 </push>
 
-<x-page-layout></x-page-layout>
+<push name="modals">
+  <x-modal-privacy></x-modal-privacy>
+  <x-modal-form-cooperation></x-modal-form-cooperation>
+  <x-modal-form-investment></x-modal-form-investment>
+</push>
+
+<x-page-layout>
+  <fill:header>
+    <x-header />
+  </fill:header>
+
+  <x-main-section></x-main-section>
+  <x-finance-section></x-finance-section>
+  <x-about-section></x-about-section>
+  <x-city-section></x-city-section>
+
+  <fill:footer>
+    <x-footer />
+  </fill:footer>
+</x-page-layout>

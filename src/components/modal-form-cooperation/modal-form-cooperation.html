@@ -1,0 +1,26 @@
+<script props>
+  module.exports = {};
+</script>
+
+<x-modal-form name="modal-form-cooperation">
+  <fill:title> Скачайте пример <br class="d-block" />договора </fill:title>
+
+  <fill:name>
+    <x-feedback-field-name />
+  </fill:name>
+
+  <fill:phone>
+    <x-feedback-field-phone />
+  </fill:phone>
+
+  <fill:button>
+    <x-button>Скачать</x-button>
+  </fill:button>
+
+  <fill:agree>
+    Нажимая на кнопку «Скачать», я&nbsp;даю&nbsp;согласие на&nbsp;обработку персональных данных
+    и&nbsp;соглашаюсь с&nbsp;<a href="#" data-remodal-target="privacy"
+      >политикой конфиденциальности</a
+    >
+  </fill:agree>
+</x-modal-form>

@@ -1,0 +1,26 @@
+<script props>
+  module.exports = {};
+</script>
+
+<x-modal-form name="modal-form-investment">
+  <fill:title> Узнайте какие вложения понадобятся на старте </fill:title>
+
+  <fill:name>
+    <x-feedback-field-name />
+  </fill:name>
+
+  <fill:phone>
+    <x-feedback-field-phone />
+  </fill:phone>
+
+  <fill:button>
+    <x-button>Узнать</x-button>
+  </fill:button>
+
+  <fill:agree>
+    Нажимая на кнопку «Узнать», я&nbsp;даю&nbsp;согласие на&nbsp;обработку персональных данных
+    и&nbsp;соглашаюсь с&nbsp;<a class="agree-link" href="#" data-remodal-target="privacy"
+      >политикой конфиденциальности</a
+    >
+  </fill:agree>
+</x-modal-form>

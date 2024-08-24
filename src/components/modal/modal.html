@@ -1,0 +1,13 @@
+<script props>
+  module.exports = {
+    name: props.name,
+  };
+</script>
+
+<div
+  class="remodal"
+  data-remodal-id="{{ name }}"
+  data-remodal-options="modifier: modal-scrollable, hashTracking:false"
+>
+  <slot />
+</div>

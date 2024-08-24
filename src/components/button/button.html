@@ -1,0 +1,16 @@
+<script props>
+  module.exports = {
+    link: props.link,
+  };
+</script>
+
+<if condition="link">
+  <a class="button" attributes>
+    <slot />
+  </a>
+</if>
+<else>
+  <button class="button" attributes>
+    <slot />
+  </button>
+</else>

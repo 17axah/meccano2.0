@@ -1,0 +1,15 @@
+<script props>
+  module.exports = {
+    textarea: props.textarea,
+    textareaClass: props.textarea ? 'input--textarea' : '',
+  };
+</script>
+
+<div class="input {{textareaClass}}">
+  <if condition="textarea">
+    <textarea attributes class="input__field"></textarea>
+  </if>
+  <else>
+    <input attributes class="input__field" />
+  </else>
+</div>
