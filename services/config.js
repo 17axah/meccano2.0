@@ -1,5 +1,9 @@
-const PORT = 3000
-const PURGE_CSS_INGORE = [/remodal/, /swiper/]
+import { readPackageSync } from 'read-pkg';
+
+const pkg = readPackageSync();
+
+const PORT = pkg.config.port || 3000
+const PURGE_CSS_INGORE = pkg.config.purgeCssIgnore.map((val) => new RegExp(val))
 
 const SOURCE = 'src'
 const DEST = 'dest'

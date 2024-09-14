@@ -8,9 +8,13 @@ import htmlmin from 'gulp-htmlmin'
 import gulpif from 'gulp-if'
 import plumber from 'gulp-plumber'
 import posthtmlComponent from 'posthtml-component'
+import posthtmlExpressions from 'posthtml-expressions'
 import posthtmlBeautify from 'posthtml-beautify'
 import posthtmlReplace from 'posthtml-replace'
+import { readPackageSync } from 'read-pkg';
 
+const production = process.env.NODE_ENV === 'production'
+const pkg = readPackageSync();
 const TAG_PREFIX = 'x-'
 
 const htmlReplace = (tag, attr, from, to) => {
@@ -29,7 +33,12 @@ const htmlReplace = (tag, attr, from, to) => {
 
 let folders = []
 
+const locals = {
+  $name: pkg.config.name
+}
+
 const plugins = [
+  posthtmlExpressions({ locals }),
   posthtmlComponent({
     root: './',
     tag: "component",
@@ -37,6 +46,7 @@ const plugins = [
     yield: "slot",
     tagPrefix: TAG_PREFIX,
     folders,
+    expressions: { locals }
   }),
   posthtmlBeautify({
     rules: {
@@ -56,8 +66,6 @@ const plugins = [
     htmlReplace('img', 'src', `/${config.src}/${config.images.dir}/`, `${config.images.dir}/`),
   ]),
 ]
-
-const production = process.env.NODE_ENV === 'production'
 
 const preBuild = (done) => {
   const files = globSync(`${config.src}/${config.components.dir}/**/*.html`, { posix: true })
